@@ -1,5 +1,5 @@
 		var suggestions = [["Suggestion1","Suggestiondesc2","gates.html"],["Suggestion","Suggestiondesc","link"]];
-		var naventry = [["Home","index.html"],["Announcements","announce.html"],["Flag-raising venue","flagraising.html"],["Staircases and gates","gates.html"],["Lend-and-borrow","lend.html"],["Competition Updates","compupdates.html"],["Canteen and Cafe","canteen.html"],["Teacher Locker finder","pigeon.html"],["Thought of The Week","totw.html"],["Chat","irc.html"],["Important Contacts","contacts.html"],["Fault report","fault.html"]];
+		var naventry = [["Home","index.html"],["Announcements","announce.html"],["Flag-raising venue","flagraising.html"],["Staircases and gates","gates.html"],["Lend-and-borrow","lend.html"],["Competition Updates","compupdates.html"],["Canteen and Cafe","canteen.html"],["Teacher Locker finder","pigeon.html"],["Thought of The Week","totw.html"],["Chat","irc.html"],["Important Contacts","contacts.html"],["Fault report","fault.html"],["Logout","logout.html"]];
 	function onloadhome(){
 		for (var i = 0; i < suggestions.length; i++){
 			var suggestionentry = document.createElement("DIV");

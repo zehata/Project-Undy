@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Project Undy</title>
+	<script src="./js.js"></script>
+	<link rel="stylesheet" href="css.css">
+	<script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+</head>
+<body onload="onload()">
+	<div id="navbut" onclick="extendnav()">E</div>
+	<div id="nav">
+		<div id="splash" class="naventry"><img id="logo" src="" alt=""></div>
+		<div id="search" class="naventry"><input type="text" id="searchwrapper" placeholder="Search"></input></div>
+	</div>
+	<div id="firebaseui-auth-container"></div>
+	<div id="loader">Loading...</div>
+
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyB4R7ZGnYLgntNcT7H_LZrsRPmr2b6JIHE",
+	    authDomain: "project-undy.firebaseapp.com",
+	    databaseURL: "https://project-undy.firebaseio.com",
+	    projectId: "project-undy",
+	    storageBucket: "project-undy.appspot.com",
+	    messagingSenderId: "71717485961"
+	  };
+	  firebase.initializeApp(config);
+		
+		var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+		  const uiConfig = {
+    callbacks: {
+      signInSuccess: () => false,
+    }};
+
+	  ui.start('#firebaseui-auth-container', {
+		  signInOptions : [
+		    firebase.auth.GoogleAuthProvider.PROVIDER_ID
+		  ],
+		});
+
+	  	firebase.auth().onAuthStateChanged(user => {
+			  if(user) {
+			  	var useremail = JSON.stringify(user.email);
+			  	console.log(useremail[useremail.length-1])
+			  	if (useremail[useremail.length-8]=='@'){
+			  		if (useremail[useremail.length-7]=='d'){
+			  			if (useremail[useremail.length-6]=='h'){
+			  				if (useremail[useremail.length-5]=='s'){
+			  					if (useremail[useremail.length-4]=='.'){
+			  						if (useremail[useremail.length-3]=='s'){
+			  							if (useremail[useremail.length-2]=='g'){
+			  								if (useremail[useremail.length-1]=='"'){
+	            	localStorage.setItem("Name",user.displayName);
+	            	localStorage.setItem("Email",user.email);
+			  	}}}}}}}}
+	            // User is signed in.
+	            if (localStorage.getItem("Name")!=""){
+	            	window.location.href="./index.html";
+	            } else {
+	            	window.location.href="./signin/html";
+	            }
+	          } else {
+	            // User is signed out.
+	          }
+	        }, function(error) {
+	          console.log(error);
+	        });
+
+
+
+	</script>
+	<div id="darken" onclick="hidenav()"></div>
+</body>
+</html>

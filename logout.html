@@ -2,24 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Project Undy</title>
+	<title>Document</title>
 	<script src="./js.js"></script>
-	<link rel="stylesheet" href="css.css">
 	<script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
 <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
-</head>
-<body onload="onload()">
-	<div id="navbut" onclick="extendnav()">E</div>
-	<div id="nav">
-		<div id="splash" class="naventry"><img id="logo" src="" alt=""></div>
-		<div id="search" class="naventry"><input type="text" id="searchwrapper" placeholder="Search"></input></div>
-	</div>
-
-	<div id="firebaseui-auth-container"></div>
-	<div id="loader">Loading...</div>
-
 	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-	<script>
+<script>
 	  // Initialize Firebase
 	  var config = {
 	    apiKey: "AIzaSyB4R7ZGnYLgntNcT7H_LZrsRPmr2b6JIHE",
@@ -31,8 +19,12 @@
 	  };
 	  firebase.initializeApp(config);
 
-	</script>
-
-	<div id="darken" onclick="hidenav()"></div>
+	function logout(){
+		firebase.auth().signOut().then(function() {
+	  }, function(error) {});
+	}
+	  </script>
+</head>
+<body onload="logout();localStorage.setItem('Name','');localStorage.setItem('Email','');window.location.href='./signin.html'">
 </body>
 </html>
