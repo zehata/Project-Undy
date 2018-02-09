@@ -10,14 +10,6 @@
 	height: calc(30vh - 60px);
 	padding: 30px;
 }
-#navbut{
-	position: fixed;
-	left: 0;
-	top: 0;
-	padding: 10px;
-	background-color:white; 
-	z-index: 2;
-}
 .suggestiontitles{
 	position: absolute;
 	bottom: 50%;
@@ -37,6 +29,7 @@
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   overflow-y: scroll;
   max-width: 300px;
+  background-color: #eee;
 }
 #darken{
 	position: fixed;
@@ -51,7 +44,7 @@
 	position: relative;
 	padding: 15px;
 	width: calc(100% - 30px);
-	background-color: red;
+	background-color: white;
 	margin-bottom:10px;
 }
 #splash{
@@ -135,4 +128,65 @@
 }
 .textwrapper{
 	margin-top: 45%;
+}
+#lockersearch{
+	border-radius: 20px;
+	height: 40px;
+	padding: 0;
+	width: calc(100% - 16px);
+	left: 8px;
+	position: relative;
+	border: none;
+	background-color: red;
+	top:10px;
+	text-align: center;
+}
+#lockersearch:focus{
+	outline: none;
+}
+#lockersearchwrapper{
+	position: absolute;
+	right: 0;
+	border: none;
+	background-color: transparent;
+	outline: none;
+	color: black;
+	width: calc(100vw - 30px);
+}
+.teachersname{
+	display: inline;
+	position: absolute;
+	left: 20px;
+	top: 15px;
+}
+.pigeonholes{
+	width: 100vw;
+}
+.lockernumber{
+	display: inline;
+	position: absolute;
+	right: 20px;
+	top: 15px;
+}
+#lockerwrapper{
+	position: fixed;
+	top: 10vh;
+}
+.greynaventry{
+	position: relative;
+	padding: 15px;
+	width: calc(100% - 30px);
+	background-color: #aaa;
+	margin-bottom:10px;
+	color:#ddd;
+}
+#navbut{
+	background-image: URL(menu.png);
+	background-size: 100% 100%;
+	width: 40px;
+	height:40px;
+	position: fixed;
+	top:10px;
+	left: 10px;
+	z-index: 2;
 }

@@ -1,6 +1,12 @@
 		var suggestions = [["Suggestion1","Suggestiondesc2","gates.html"],["Suggestion","Suggestiondesc","link"]];
-		var naventry = [["Home","index.html"],["Announcements","announce.html"],["Flag-raising venue","flagraising.html"],["Staircases and gates","gates.html"],["Lend-and-borrow","lend.html"],["Competition Updates","compupdates.html"],["Canteen and Cafe","canteen.html"],["Teacher Locker finder","pigeon.html"],["Thought of The Week","totw.html"],["Chat","irc.html"],["Important Contacts","contacts.html"],["Fault report","fault.html"],["Logout","logout.html"]];
+		var fullnaventry = [["Home","index.html"],["Announcements","announce.html"],["Flag-raising venue","flagraising.html"],["Staircases and gates","gates.html"],["Lend-and-borrow","lend.html"],["Competition Updates","compupdates.html"],["Canteen and Cafe","canteen.html"],["Teacher Locker finder","pigeon.html"],["Thought of The Week","totw.html"],["Chat","irc.html"],["Important Contacts","contacts.html"],["Fault report","fault.html"],["Logout","logout.html"]];
+		var naventry = [["Home","index.html"],["Announcements","announce.html"],["Flag-raising venue","flagraising.html"],["Thought of The Week","totw.html"],["Competition Updates","compupdates.html"],["Consultation Booking","locked.html"],["Canteen and Cafe","locked.html"],["Teacher Locker finder","locked.html"],["Staircases and gates","locked.html"],["Lend-and-borrow","locked.html"],["Chat","locked.html"],["Fault report","locked.html"],["Logout","logout.html"]];
+		var teachersnamelist = [[["Grace","Ong"],1],[["b"],2]];
 	function onloadhome(){
+		var logo = document.createElement("IMG");
+		logo.src="logo.png";
+		logo.id="logo";
+		document.getElementById('splash').appendChild(logo);
 		for (var i = 0; i < suggestions.length; i++){
 			var suggestionentry = document.createElement("DIV");
 			suggestionentry.className = "suggestions";
@@ -17,15 +23,25 @@
 			} else {
 				var suggestionentry = document.createElement("DIV");
 				suggestionentry.className = "naventry";
+			if(naventry[j][1] == "locked.html"){
+				suggestionentry.className = "greynaventry";
+			}
 				suggestionentry.innerHTML = "<div id='navwrapper' onclick=window.location.href="+"'"+naventry[j][1]+"'>"+naventry[j][0]+"</div></div>"
 				$("nav").appendChild(suggestionentry);
 			}
 		}
 	}
 	function onload(){
+		var logo = document.createElement("IMG");
+		logo.src="logo.png";
+		logo.id="logo";
+		document.getElementById('splash').appendChild(logo);
 		for (var j = 0; j < naventry.length; j++){
 			var suggestionentry = document.createElement("DIV");
 			suggestionentry.className = "naventry";
+			if(naventry[j][1] == "locked.html"){
+				suggestionentry.className = "greynaventry";
+			}
 			suggestionentry.innerHTML = "<div id='navwrapper' onclick=window.location.href="+"'"+naventry[j][1]+"'>"+naventry[j][0]+"</div></div>"
 			$("nav").appendChild(suggestionentry);
 		}
