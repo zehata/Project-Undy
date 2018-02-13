@@ -4,27 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script src="./js.js"></script>
-	<script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
-<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
-	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyB4R7ZGnYLgntNcT7H_LZrsRPmr2b6JIHE",
-	    authDomain: "project-undy.firebaseapp.com",
-	    databaseURL: "https://project-undy.firebaseio.com",
-	    projectId: "project-undy",
-	    storageBucket: "project-undy.appspot.com",
-	    messagingSenderId: "71717485961"
-	  };
-	  firebase.initializeApp(config);
-
-	function logout(){
-		firebase.auth().signOut().then(function() {
-	  }, function(error) {});
-	}
-	  </script>
 </head>
-<body onload="logout();localStorage.setItem('Name','');localStorage.setItem('Email','');window.location.href='./signin.html'">
+<body onload="Android.logout();window.location.href='signin.html';">
 </body>
 </html>
