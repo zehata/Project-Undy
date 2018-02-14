@@ -72,7 +72,10 @@
 	          console.log(error);
 	        });
 
-
+function logout(){
+		firebase.auth().signOut().then(function() {
+	  }, function(error) {});
+	}
 
 	</script>
 	<div id="darken" onclick="hidenav()"></div>
