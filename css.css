@@ -127,7 +127,9 @@
 	height: 100vh;
 }
 .textwrapper{
-	margin-top: 45%;
+	position: absolute;
+	top: 45%;
+	left: 45%;
 }
 #lockersearch{
 	border-radius: 20px;
