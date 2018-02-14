@@ -33,6 +33,7 @@
 	  announcementsref.on("value", function(snapshot) {
 	  		var announcementsdl = snapshot.val();
 	  		var noofan = announcementsdl.noofan;
+	  		$('announcementswrapper').innerHTML = "";
 	  		for(var i = 0; i < noofan; i++){
 	  			var name = "announcement" + i;
 	  			var announcement = document.createElement("DIV");

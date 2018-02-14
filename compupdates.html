@@ -34,6 +34,7 @@
 	  announcementsref.on("value", function(snapshot) {
 	  		var announcementsdl = snapshot.val();
 	  		var noofcu = announcementsdl.noofcu;
+	  		$('compupdateswrapper').innerHTML = "";
 	  		for(var i = 0; i < noofcu; i++){
 	  			var name = "compupdate" + i;
 	  			var announcement = document.createElement("DIV");
