@@ -222,7 +222,7 @@
 	position: relative;
 	top: 0;
 	width: 100vw;
-	height: 20vh;
+	min-height: 20vh;
 	border-bottom: 1px solid grey;
 }
 .antitle{

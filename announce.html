@@ -38,6 +38,9 @@
 	  			var name = "announcement" + i;
 	  			var announcement = document.createElement("DIV");
 	  			announcement.id = name;
+	  			if (announcementsdl[name].customheight){
+	  				announcement.style.height=announcementsdl[name].customheight;
+	  			}
 	  			announcement.className = "announcements";
 	  			announcement.innerHTML = "<div class='antitle'>"+announcementsdl[name].Title+"</div><div class='andesc'>"+announcementsdl[name].Desc+"</div>";
 	  			$('announcementswrapper').appendChild(announcement);
