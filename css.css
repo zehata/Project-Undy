@@ -6,17 +6,27 @@
 .suggestions{
 	position:relative;
 	border-bottom: 1px solid;
-	width: calc(100vw - 60px);
-	height: calc(30vh - 60px);
-	padding: 30px;
+	width: 100vw;
+	height: 30vh;
+	overflow: hidden;
+	background: url('test.png');
+	background-size: 100%;
 }
 .suggestiontitles{
 	position: absolute;
 	bottom: 50%;
+	left:10%;
+	width: 90%;
 }
 .suggestiondesc{
 	position: absolute;
 	bottom: 30%;
+	left:10%;
+	width: 90vw;
+}
+.suggestionpics{
+	position: absolute;
+	top: 0;
 }
 #nav{
 	position: fixed;

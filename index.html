@@ -17,12 +17,44 @@
 	<div id="darken" onclick="hidenav()"></div>
 	<div id="homescreensuggestionswrapper"></div>
 
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 	<script>
 	if(localStorage.getItem('Name')){
 
 	} else {
 		window.location.href="./signin.html";
 	}	
+	function updater(){
+        	var config = {
+	    apiKey: "AIzaSyB4R7ZGnYLgntNcT7H_LZrsRPmr2b6JIHE",
+	    authDomain: "project-undy.firebaseapp.com",
+	    databaseURL: "https://project-undy.firebaseio.com",
+	    projectId: "project-undy",
+	    storageBucket: "project-undy.appspot.com",
+	    messagingSenderId: "71717485961"
+	  };
+	  firebase.initializeApp(config);
+
+	  var coreref = firebase.database().ref('core/');
+	  coreref.on("value", function(snapshot) {
+	  		var coredl = snapshot.val();
+	  		var suggestions = [];
+	  		for(var i = 0; i < 3; i++){
+	  			console.log(coredl.suggestions)
+	  			suggestions = JSON.parse(coredl.suggestions);
+	  				$('homescreensuggestionswrapper').innerHTML = "";
+	  			for (var i = 0; i < suggestions.length; i++){
+			var suggestionentry = document.createElement("DIV");
+			suggestionentry.className = "suggestions";
+			suggestionentry.id="suggestion"+i;
+			suggestionentry.style.background = "url('"+suggestions[i][3]+"')";
+			suggestionentry.style.backgroundSize = "100%";
+			suggestionentry.innerHTML = "<div id='suggestionwrapper' onclick=window.location.href="+"'"+suggestions[i][2]+"'><div class='suggestiontitles'>"+suggestions[i][0]+"</div><div class='suggestiondesc'>"+suggestions[i][1]+"</div></div>"
+			$("homescreensuggestionswrapper").appendChild(suggestionentry);
+		}
+	  		}
+		});
+        }
 	</script>
 </body>
 </html>
