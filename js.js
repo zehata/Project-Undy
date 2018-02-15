@@ -3,15 +3,9 @@
 		var naventry = [["Home","index.html"],["Announcements","announce.html"],["Flag-raising venue","flagraising.html"],["Assembly Venue","assembly.html"],["Competition Updates","compupdates.html"],["Listening to you","feedback.html"],["Teacher Locker finder","locked.html"],["Blazer loan","locked.html"],["Consultation Booking","locked.html"],["Canteen and Cafe","locked.html"],["Staircases and gates","locked.html"],["Lend-and-borrow","locked.html"],["Chat","locked.html"],["Fault report","locked.html"],["Logout","logout.html"]];
 		var teachersnamelist = [[["Grace","Ong"],1],[["b"],2]];
 		if (localStorage.getItem("Name")!=""){
-	            } else {
-	            	logout();
-	            	window.location.href="./signinretry.html";
-	            }
-	            function logout(){
-		firebase.auth().signOut().then(function() {
-	  }, function(error) {});
-	}
-
+        } else {
+        	window.location.href="./signin.html";
+        }
 	function onloadhome(){
 		var logo = document.createElement("IMG");
 		logo.src="logo.png";
