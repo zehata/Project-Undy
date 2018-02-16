@@ -49,9 +49,7 @@
 			  	console.log(useremail[useremail.length-1]);
 
 			  	// if the user's email ends in @dhs.sg
-			  	console.log(user.email.match(/.*@dhs\.sg$/))
 			  	if ( user.email.match(/.*@dhs\.sg$/) ) {
-			  		console.log('haha yes')
 			  		// the user's from dhs; let them in and redirect them to index.html
           	localStorage.setItem("Name",user.displayName);
           	localStorage.setItem("Email",user.email);
