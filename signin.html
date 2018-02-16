@@ -42,39 +42,37 @@
 		  ],
 		});
 
-	  	firebase.auth().onAuthStateChanged(user => {
+	  	firebase.auth()
+	  	.onAuthStateChanged(user => {
 			  if(user) {
 			  	var useremail = JSON.stringify(user.email);
-			  	console.log(useremail[useremail.length-1])
-			  	if (useremail[useremail.length-8]=='@'){
-			  		if (useremail[useremail.length-7]=='d'){
-			  			if (useremail[useremail.length-6]=='h'){
-			  				if (useremail[useremail.length-5]=='s'){
-			  					if (useremail[useremail.length-4]=='.'){
-			  						if (useremail[useremail.length-3]=='s'){
-			  							if (useremail[useremail.length-2]=='g'){
-			  								if (useremail[useremail.length-1]=='"'){
-	            	localStorage.setItem("Name",user.displayName);
-	            	localStorage.setItem("Email",user.email);
-			  	}}}}}}}}
-	            // User is signed in.
-	            if (localStorage.getItem("Name")!=""){
-	            	window.location.href="./index.html";
-	            } else {
-	            	logout();
-	            	window.location.href="./signinretry.html";
-	            }
-	          } else {
-	            // User is signed out.
-	          }
-	        }, function(error) {
-	          console.log(error);
-	        });
+			  	console.log(useremail[useremail.length-1]);
+
+			  	// if the user's email ends in @dhs.sg
+			  	console.log(user.email.match(/.*@dhs\.sg$/))
+			  	if ( user.email.match(/.*@dhs\.sg$/) ) {
+			  		console.log('haha yes')
+			  		// the user's from dhs; let them in and redirect them to index.html
+          	localStorage.setItem("Name",user.displayName);
+          	localStorage.setItem("Email",user.email);
+        		window.location.href="./index.html";
+			  	} else {
+			  		// the user's not from dhs; send them back to signinretry.html
+	          logout();
+          }
+        }
+      }, function(error) {
+        console.log(error);
+      });
 
 	  	function logout(){
-		firebase.auth().signOut().then(function() {
-	  }, function(error) {});
-	}
+				firebase.auth().signOut()
+				.then(function() {
+        	window.location.href="./signinretry.html";
+			 	}, function(error) {
+
+			 	});
+			}
 
 	</script>
 	<div id="darken" onclick="hidenav()"></div>
