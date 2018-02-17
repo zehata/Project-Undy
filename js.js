@@ -43,10 +43,13 @@
 			suggestionentry.className = "naventry";
 			if(naventry[j][1] == "locked.html"){
 				suggestionentry.className = "greynaventry";
-			}
-			suggestionentry.innerHTML = "<div id='navwrapper' onclick=window.location.href="+"'"+naventry[j][1]+"'>"+naventry[j][0]+"</div></div>"
-			$("nav").appendChild(suggestionentry);
-		}
+				suggestionentry.innerHTML = "<div id='navwrapper' onclick=window.location.href='"+naventry[j][1]+"'>"+"<div style='color:blue;'>Available if feedback is good</div>"+naventry[j][0]+"</div></div>"
+				$("nav").appendChild(suggestionentry);
+				
+			} else {
+				suggestionentry.innerHTML = "<div id='navwrapper' onclick=window.location.href='"+naventry[j][1]+"'>"+naventry[j][0]+"</div></div>"
+				$("nav").appendChild(suggestionentry);
+			}}
 	}
 	function extendnav(){
 		$("nav").style.left="0";
