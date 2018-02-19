@@ -42,8 +42,11 @@
 	  var mesref = firebase.database().ref('feedbacks/'+localStorage.getItem('Name')+"/");
 	  mesref.on("value", function(snapshot) {
 	  		var mesdl = snapshot.val();
+	  		try{
 	  		if(mesdl.reply){
 	  			$('reply').innerHTML = "Reply: " + mesdl.reply;
+	  		}} catch(e){
+	  			
 	  		}
 	  		
 		});
