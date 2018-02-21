@@ -16,6 +16,8 @@
 	</div>
 	<div id="darken" onclick="hidenav()"></div>
 
+	<div style="position: fixed; background-color: grey; left: 5vw; z-index:1; top: 20px; text-align: center; width: 90vw; height: 20px; color:white;" id="date"></div>
+
 	<div id="venuewrapper">
 		<div class="venues" id="y1"></div>
 		<div class="venues" id="y2"></div>
@@ -43,6 +45,7 @@
 	  	flags.on("value", function(snapshot) {
 	  		var flagvs = snapshot.val();
 	  		venues = flagvs.Flag;
+	  		$('date').innerHTML = venues[0].date;
 			for(var i = 0; i < 6; i++){
 				var venuediv = document.createElement('DIV');
 				venuediv.className = "venues";

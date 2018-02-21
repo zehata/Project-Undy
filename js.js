@@ -53,7 +53,7 @@
 	}
 	function extendnav(){
 		$("nav").style.left="0";
-		$("darken").style.zIndex=1;
+		$("darken").style.zIndex=2;
 		setTimeout(function(){$("darken").style.opacity=0.5;},1);
 	}
 	function hidenav(){
